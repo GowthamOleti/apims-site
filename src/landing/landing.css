@@ -1212,14 +1212,19 @@
     grid-template-columns: 1fr;
     gap: 40px;
   }
-  
+
   .verticals-grid {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 16px;
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
-  .verticals-row{ gap:16px; padding: 0 16px 4px; }
-  .vertical-card{ border-radius:20px; }
-  .vertical-media{ border-radius:20px 20px 0 0; }
+
+  .vertical-card {
+    border-radius: 18px;
+  }
+
+  .vertical-media {
+    border-radius: 18px 18px 0 0;
+  }
   .carousel-btn.left{ left:6px }
   .carousel-btn.right{ right:6px }
 
