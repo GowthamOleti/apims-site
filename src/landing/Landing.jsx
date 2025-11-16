@@ -217,7 +217,7 @@ function Landing() {
             </a>
           </div>
           <div className="hero-contact">
-            <a href="tel:+919949945699" className="contact-link">
+            <a href="mailto:contact@apimsindia.com" className="contact-link">
               <Phone size={18} />
               <span>+91 99499 45699</span>
             </a>
@@ -544,7 +544,9 @@ function Landing() {
           <p className="cta-description">
             Let's discuss how we can help you achieve your investment goals
           </p>
-          <button className="btn-primary-large">Get in Touch</button>
+          <a href="mailto:contact@apimsindia.com" className="btn-primary-large">
+            Get in Touch
+          </a>
         </div>
       </section>
 
@@ -575,7 +577,7 @@ function Landing() {
             </div>
             <div className="footer-col">
               <h5>Contact</h5>
-              <a href="tel:+919949945699">+91 99499 45699</a>
+              <a href="mailto:contact@apimsindia.com">+91 99499 45699</a>
               <a href="mailto:contact@apimsindia.com">contact@apimsindia.com</a>
               <div className="footer-social">
                 <a href="#" aria-label="Facebook">f</a>
