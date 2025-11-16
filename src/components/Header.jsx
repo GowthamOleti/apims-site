@@ -16,6 +16,11 @@ function Header({ searchQuery, onSearchChange, activeFilter, user, onLogout }) {
   return (
     <header className="header">
       <div className="header-left">
+        <img
+          src="/apims-logo.png"
+          alt="APIMS Logo"
+          className="apims-logo"
+        />
         <h1 className="page-title">{categoryLabels[activeFilter] || 'All Resources'}</h1>
       </div>
       <div className="header-right">
