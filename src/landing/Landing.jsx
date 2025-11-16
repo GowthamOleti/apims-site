@@ -172,7 +172,11 @@ function Landing() {
       <nav className={`landing-nav ${scrolled ? 'scrolled' : ''}`}>
         <div className="landing-nav-container">
           <div className="landing-nav-logo">
-            <span className="logo-icon">◆</span>
+            <img
+              src="/apims-logo.png"
+              alt="APIMS logo"
+              className="landing-logo-img"
+            />
             <span className="logo-text">APIMS</span>
           </div>
           <div className="landing-nav-links">
