@@ -580,9 +580,30 @@ function Landing() {
               <a href="mailto:contact@apimsindia.com">+91 99499 45699</a>
               <a href="mailto:contact@apimsindia.com">contact@apimsindia.com</a>
               <div className="footer-social">
-                <a href="#" aria-label="Facebook">f</a>
-                <a href="#" aria-label="Twitter">𝕏</a>
-                <a href="#" aria-label="LinkedIn">in</a>
+                <a
+                  href="https://www.facebook.com/apimsindia"
+                  aria-label="Facebook"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  f
+                </a>
+                <a
+                  href="https://x.com/apimsindia"
+                  aria-label="Twitter"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  𝕏
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/apims-india/"
+                  aria-label="LinkedIn"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  in
+                </a>
               </div>
             </div>
           </div>
