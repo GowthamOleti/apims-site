@@ -281,7 +281,6 @@ function Landing() {
             </div>
             <div className="mission-visual">
               <div className="mission-image-placeholder">
-                <div className="mission-overlay-text">Making a Positive Change</div>
               </div>
             </div>
           </div>
