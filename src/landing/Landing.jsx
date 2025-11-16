@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import { Phone, Mail, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react'
 import './landing.css'
 
@@ -509,48 +509,31 @@ function Landing() {
               Strategic investments across multiple high-growth sectors
             </p>
           </div>
-          {(() => {
-            const ref = useRef(null)
-            const scrollBy = (dir) => {
-              if (!ref.current) return
-              ref.current.scrollBy({ left: dir * 420, behavior: 'smooth' })
-            }
-            return (
-              <div className="verticals-carousel">
-                <button className="carousel-btn left" onClick={() => scrollBy(-1)} aria-label="Scroll left">
-                  <ChevronLeft size={20} />
-                </button>
-                <div className="verticals-row" ref={ref}>
-                  {[
-                    { label: 'Infrastructure', desc: 'Building modern cities and transportation networks', img: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80' },
-                    { label: 'Media & Entertainment', desc: 'Digital content and broadcasting platforms', img: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&q=80' },
-                    { label: 'Food & Agro', desc: 'Sustainable agriculture and food processing', img: 'https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=800&q=80' },
-                    { label: 'Tourism', desc: 'Hospitality and destination development', img: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&q=80' },
-                    { label: 'Power & Energy', desc: 'Renewable energy and grid infrastructure', img: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&q=80' },
-                    { label: 'Education', desc: 'Modern learning institutions and EdTech', img: 'https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=800&q=80' },
-                    { label: 'Ports & Logistics', desc: 'Maritime trade and supply chain solutions', img: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=800&q=80' },
-                    { label: 'Transport', desc: 'Public transit and mobility infrastructure', img: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&q=80' },
-                    { label: 'Mining', desc: 'Mineral extraction and resource management', img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80' },
-                    { label: 'Exports & Trading', desc: 'International trade and commerce', img: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80' },
-                  ].map(v => (
-                    <div key={v.label} className="vertical-card">
-                      <div className="vertical-media">
-                        <img src={v.img} alt={v.label} className="vertical-image" />
-                        <div className="vertical-overlay"></div>
-                      </div>
-                      <div className="vertical-body">
-                        <h3 className="vertical-title">{v.label}</h3>
-                        <p className="vertical-description">{v.desc}</p>
-                      </div>
-                    </div>
-                  ))}
+          <div className="verticals-grid">
+            {[
+              { label: 'Infrastructure', desc: 'Building modern cities and transportation networks', img: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80' },
+              { label: 'Media & Entertainment', desc: 'Digital content and broadcasting platforms', img: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&q=80' },
+              { label: 'Food & Agro', desc: 'Sustainable agriculture and food processing', img: 'https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=800&q=80' },
+              { label: 'Tourism', desc: 'Hospitality and destination development', img: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&q=80' },
+              { label: 'Power & Energy', desc: 'Renewable energy and grid infrastructure', img: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&q=80' },
+              { label: 'Education', desc: 'Modern learning institutions and EdTech', img: 'https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=800&q=80' },
+              { label: 'Ports & Logistics', desc: 'Maritime trade and supply chain solutions', img: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=800&q=80' },
+              { label: 'Transport', desc: 'Public transit and mobility infrastructure', img: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&q=80' },
+              { label: 'Mining', desc: 'Mineral extraction and resource management', img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80' },
+              { label: 'Exports & Trading', desc: 'International trade and commerce', img: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80' },
+            ].map(v => (
+              <div key={v.label} className="vertical-card">
+                <div className="vertical-media">
+                  <img src={v.img} alt={v.label} className="vertical-image" />
+                  <div className="vertical-overlay"></div>
                 </div>
-                <button className="carousel-btn right" onClick={() => scrollBy(1)} aria-label="Scroll right">
-                  <ChevronRight size={20} />
-                </button>
+                <div className="vertical-body">
+                  <h3 className="vertical-title">{v.label}</h3>
+                  <p className="vertical-description">{v.desc}</p>
+                </div>
               </div>
-            )
-          })()}
+            ))}
+          </div>
         </div>
       </section>
 

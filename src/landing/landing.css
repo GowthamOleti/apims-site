@@ -625,9 +625,9 @@
 
 /* Make the carousel edge-to-edge in this section */
 .section-verticals .section-container{
-  max-width: 100%;
-  padding-left: 0;
-  padding-right: 0;
+  max-width: 1200px;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 .section-verticals .section-header-center{
   max-width: 1200px;
