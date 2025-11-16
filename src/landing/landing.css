@@ -636,7 +636,6 @@
 	overflow: hidden;
 	cursor: pointer;
 	transition: var(--transition-smooth);
-  flex:0 0 360px;
 	border: 1px solid var(--stroke);
 	background: #ffffff;
 	box-shadow: 0 10px 30px rgba(2, 6, 23, 0.06);
@@ -1219,7 +1218,7 @@
     gap: 16px;
   }
   .verticals-row{ gap:16px; padding: 0 16px 4px; }
-  .vertical-card{ flex:0 0 280px; border-radius:20px; }
+  .vertical-card{ border-radius:20px; }
   .vertical-media{ border-radius:20px 20px 0 0; }
   .carousel-btn.left{ left:6px }
   .carousel-btn.right{ right:6px }
