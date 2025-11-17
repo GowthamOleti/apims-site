@@ -283,25 +283,31 @@ function Landing() {
       <section className="landing-section section-about" id="about">
         <div className="section-container">
           <div className="section-header-center animate-on-scroll">
-            <h2 className="section-title">Who We Are</h2>
+            <h2 className="section-title gradient-title">Who We Are</h2>
             <p className="section-description">
               APIMS INDIA PRIVATE LIMITED is bringing Experience, Expertise and Network to grow and create
               wealth across India.
             </p>
           </div>
           <div className="about-content">
-            <div className="about-card glass-card animate-on-scroll">
-              <div className="about-icon">🎯</div>
-              <h3>Our Vision</h3>
+            <div className="about-card animate-on-scroll">
+              <div className="about-icon-wrapper">
+                <div className="about-icon">🎯</div>
+              </div>
+              <h3 className="about-card-title">Our Vision</h3>
+              <div className="about-card-divider"></div>
               <p>
                 To be a catalyst in ushering in Prosperity, World Class Health, Education, and Superior Living
                 Standards for the people of India and do so in an Eco-friendly manner to build a vibrant and
                 sustainable state for future generations.
               </p>
             </div>
-            <div className="about-card glass-card animate-on-scroll">
-              <div className="about-icon">🚀</div>
-              <h3>Our Approach</h3>
+            <div className="about-card animate-on-scroll">
+              <div className="about-icon-wrapper">
+                <div className="about-icon">🚀</div>
+              </div>
+              <h3 className="about-card-title">Our Approach</h3>
+              <div className="about-card-divider"></div>
               <p>
                 We believe in creating value for our clients and social impact through our services. We build
                 capacity by passing on knowledge and expertise to our clients and guide them in forming
