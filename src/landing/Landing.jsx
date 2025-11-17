@@ -282,6 +282,20 @@ function Landing() {
               <span>contact@apimsindia.com</span>
             </a>
           </div>
+          <div className="hero-mou">
+            <a 
+              href="https://5c05895c-11c8-4e3f-b5ad-6185fd717766.usrfiles.com/ugd/5c0589_7a11e3912bde4bf393a106576420e5ba.pdf" 
+              target="_blank" 
+              rel="noreferrer"
+              className="hero-mou-link"
+            >
+              <img 
+                src="https://static.wixstatic.com/media/5c0589_102845e8fd0043258b18d85af6824e43~mv2.jpeg" 
+                alt="Exchange of MOU was completed in the presence of Hon'ble Minister for Industries"
+                className="hero-mou-image"
+              />
+            </a>
+          </div>
         </div>
       </section>
 
