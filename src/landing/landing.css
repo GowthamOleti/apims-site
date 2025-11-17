@@ -848,20 +848,23 @@
   z-index: 0;
 }
 
-/* Gradual blur and vignette effect */
+/* Top to bottom blur effect similar to hero */
 .section-cta::after {
   content: '';
   position: absolute;
-  inset: 0;
-  background: 
-    radial-gradient(ellipse 100% 90% at center, transparent 35%, rgba(0, 0, 0, 0.1) 55%, rgba(0, 0, 0, 0.25) 75%, rgba(0, 0, 0, 0.45) 100%);
-  backdrop-filter: blur(0px);
-  -webkit-backdrop-filter: blur(0px);
-  z-index: 1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
   pointer-events: none;
+  -webkit-backdrop-filter: blur(34px);
+  backdrop-filter: blur(34px);
+  /* soften the transition from top to bottom */
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 100%);
+  z-index: 1;
 }
 
-/* Blur layers at edges for gradual blur effect */
 .cta-container {
   position: relative;
   z-index: 3;
@@ -869,36 +872,6 @@
   max-width: 700px;
   margin: 0 auto;
   padding: 80px 24px;
-}
-
-.cta-container::before {
-  content: '';
-  position: absolute;
-  top: -25%;
-  left: -25%;
-  width: 150%;
-  height: 150%;
-  background: radial-gradient(circle at center, transparent 45%, rgba(0, 0, 0, 0.05) 100%);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  z-index: -1;
-  pointer-events: none;
-  opacity: 0.7;
-}
-
-.cta-container::after {
-  content: '';
-  position: absolute;
-  top: -35%;
-  left: -35%;
-  width: 170%;
-  height: 170%;
-  background: radial-gradient(circle at center, transparent 55%, rgba(0, 0, 0, 0.08) 100%);
-  backdrop-filter: blur(35px);
-  -webkit-backdrop-filter: blur(35px);
-  z-index: -2;
-  pointer-events: none;
-  opacity: 0.5;
 }
 
 .section-cta > * {
