@@ -375,7 +375,6 @@ function Landing() {
                 dreams become realities and visions become visuals, helping us take our state on the golden
                 pathway of building prosperous Smart and Green cities and villages.
               </p>
-              <button className="btn-secondary-light">Learn More About Our Mission →</button>
             </div>
             <div className="mission-visual animate-on-scroll">
               <div className="mission-image-placeholder">
