@@ -282,20 +282,6 @@ function Landing() {
               <span>contact@apimsindia.com</span>
             </a>
           </div>
-          <div className="hero-mou">
-            <a 
-              href="https://5c05895c-11c8-4e3f-b5ad-6185fd717766.usrfiles.com/ugd/5c0589_7a11e3912bde4bf393a106576420e5ba.pdf" 
-              target="_blank" 
-              rel="noreferrer"
-              className="hero-mou-link"
-            >
-              <img 
-                src="https://static.wixstatic.com/media/5c0589_102845e8fd0043258b18d85af6824e43~mv2.jpeg" 
-                alt="Exchange of MOU was completed in the presence of Hon'ble Minister for Industries"
-                className="hero-mou-image"
-              />
-            </a>
-          </div>
         </div>
       </section>
 
@@ -333,6 +319,43 @@ function Landing() {
                 capacity by passing on knowledge and expertise to our clients and guide them in forming
                 partnerships that will help them to realize their potential and fulfill their goals.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* MOU Section */}
+      <section className="landing-section section-mou">
+        <div className="section-container">
+          <div className="mou-content">
+            <div className="mou-text animate-on-scroll">
+              <h2 className="mou-title">Memorandum of Understanding</h2>
+              <p className="mou-description">
+                Exchange of MOU was completed in the presence of Hon'ble Minister for Industries. 
+                This milestone represents our commitment to strategic partnerships and collaborative growth.
+              </p>
+              <a 
+                href="https://5c05895c-11c8-4e3f-b5ad-6185fd717766.usrfiles.com/ugd/5c0589_7a11e3912bde4bf393a106576420e5ba.pdf" 
+                target="_blank" 
+                rel="noreferrer"
+                className="btn-mou"
+              >
+                View MOU <ArrowRight size={18} />
+              </a>
+            </div>
+            <div className="mou-image-wrapper animate-on-scroll">
+              <a 
+                href="https://5c05895c-11c8-4e3f-b5ad-6185fd717766.usrfiles.com/ugd/5c0589_7a11e3912bde4bf393a106576420e5ba.pdf" 
+                target="_blank" 
+                rel="noreferrer"
+                className="mou-link"
+              >
+                <img 
+                  src="https://static.wixstatic.com/media/5c0589_102845e8fd0043258b18d85af6824e43~mv2.jpeg" 
+                  alt="Exchange of MOU was completed in the presence of Hon'ble Minister for Industries"
+                  className="mou-image"
+                />
+              </a>
             </div>
           </div>
         </div>
