@@ -440,7 +440,7 @@
   transform: translateY(0);
   cursor: pointer;
   background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border: none;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
   position: relative;
 }
@@ -503,7 +503,6 @@
 .about-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
-  border-color: rgba(0, 0, 0, 0.12);
 }
 
 .about-card:active {
