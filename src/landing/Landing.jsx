@@ -381,23 +381,30 @@ function Landing() {
               </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Wayside Amenities Section */}
-      <section className="landing-section section-wayside">
-        <div className="section-container">
-          <div className="wayside-content animate-on-scroll">
-            <div className="section-eyebrow">Latest Project</div>
-            <h2 className="wayside-title">Wayside Amenities Project</h2>
-            <p className="wayside-description">
-              APIMS is proud to be part of India's first premium expressway corridor project, developing 
-              world-class wayside amenities along the Bengaluru-Chennai Expressway. This landmark infrastructure 
-              initiative brings international standards to highway travel.
-            </p>
-            <a href="/wayside-amenities" className="btn-wayside">
-              View Project Details <ArrowRight size={18} />
-            </a>
+          {/* Wayside Amenities in Mission Section */}
+          <div className="wayside-in-mission">
+            <div className="wayside-grid">
+              <div className="wayside-content-left animate-on-scroll">
+                <div className="section-eyebrow">Latest Project</div>
+                <h2 className="wayside-title">Wayside Amenities Project</h2>
+                <p className="wayside-description">
+                  APIMS is proud to be part of India's first premium expressway corridor project, developing 
+                  world-class wayside amenities along the Bengaluru-Chennai Expressway. This landmark infrastructure 
+                  initiative brings international standards to highway travel.
+                </p>
+                <a href="/wayside-amenities" className="btn-wayside">
+                  View Project Details <ArrowRight size={18} />
+                </a>
+              </div>
+              <div className="wayside-image-container animate-on-scroll">
+                <img 
+                  src="https://static.wixstatic.com/media/5c0589_b656f1b9f1e34d389dad8aaba50d54d4~mv2.jpeg" 
+                  alt="Wayside Amenities Project"
+                  className="wayside-project-image"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
