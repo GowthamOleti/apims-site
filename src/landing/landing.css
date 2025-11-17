@@ -1231,3 +1231,302 @@
   .titles h2 { font-size: 20px; }
   .modal-section h3 { font-size: 20px; }
 }
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Animation Classes */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.slide-in-right {
+  animation: slideInRight 0.8s ease-out forwards;
+}
+
+.scale-in {
+  animation: scaleIn 0.6s ease-out forwards;
+}
+
+/* Hero Section Animations */
+.landing-hero {
+  animation: fadeIn 1s ease-out;
+}
+
+.hero-content > * {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.hero-eyebrow {
+  animation-delay: 0.1s;
+  opacity: 0;
+}
+
+.hero-title {
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+
+.hero-subtitle {
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+
+.hero-ctas {
+  animation-delay: 0.4s;
+  opacity: 0;
+}
+
+.hero-contact {
+  animation-delay: 0.5s;
+  opacity: 0;
+}
+
+/* Navigation Animations */
+.landing-nav {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.landing-nav-logo {
+  transition: transform 0.3s ease;
+}
+
+.landing-nav-logo:hover {
+  transform: scale(1.05);
+}
+
+.landing-nav-links a {
+  position: relative;
+}
+
+.landing-nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-accent);
+  transition: width 0.3s ease;
+}
+
+.landing-nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Card Hover Animations */
+.about-card,
+.solution-card,
+.vertical-card,
+.director-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card:hover,
+.solution-card:hover,
+.vertical-card:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+.director-card:hover {
+  transform: translateY(-8px);
+}
+
+/* Image Animations */
+.vertical-image {
+  transition: transform 0.5s ease;
+}
+
+.vertical-card:hover .vertical-image {
+  transform: scale(1.08);
+}
+
+.director-image img {
+  transition: transform 0.4s ease;
+}
+
+.director-card:hover .director-image img {
+  transform: scale(1.15);
+}
+
+/* Button Animations */
+.btn-primary,
+.btn-glass,
+.btn-secondary,
+.btn-secondary-light,
+.btn-primary-large,
+.landing-nav-cta {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-primary::before,
+.btn-glass::before,
+.btn-secondary::before,
+.btn-secondary-light::before,
+.btn-primary-large::before,
+.landing-nav-cta::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn-primary:hover::before,
+.btn-glass:hover::before,
+.btn-secondary:hover::before,
+.btn-secondary-light:hover::before,
+.btn-primary-large:hover::before,
+.landing-nav-cta:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* Modal Animations */
+.director-modal-overlay {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.director-modal {
+  animation: scaleIn 0.3s ease-out;
+}
+
+.modal-close {
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.modal-close:hover {
+  transform: rotate(90deg) scale(1.1);
+}
+
+/* Section Header Animations */
+.section-header-center {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* Stagger Animation Delays */
+.about-card:nth-child(1) { animation-delay: 0.1s; }
+.about-card:nth-child(2) { animation-delay: 0.2s; }
+
+.solution-card:nth-child(1) { animation-delay: 0.1s; }
+.solution-card:nth-child(2) { animation-delay: 0.2s; }
+.solution-card:nth-child(3) { animation-delay: 0.3s; }
+
+.director-card:nth-child(1) { animation-delay: 0.1s; }
+.director-card:nth-child(2) { animation-delay: 0.2s; }
+.director-card:nth-child(3) { animation-delay: 0.3s; }
+.director-card:nth-child(4) { animation-delay: 0.4s; }
+.director-card:nth-child(5) { animation-delay: 0.5s; }
+
+.vertical-card:nth-child(1) { animation-delay: 0.05s; }
+.vertical-card:nth-child(2) { animation-delay: 0.1s; }
+.vertical-card:nth-child(3) { animation-delay: 0.15s; }
+.vertical-card:nth-child(4) { animation-delay: 0.2s; }
+.vertical-card:nth-child(5) { animation-delay: 0.25s; }
+.vertical-card:nth-child(6) { animation-delay: 0.3s; }
+.vertical-card:nth-child(7) { animation-delay: 0.35s; }
+.vertical-card:nth-child(8) { animation-delay: 0.4s; }
+.vertical-card:nth-child(9) { animation-delay: 0.45s; }
+.vertical-card:nth-child(10) { animation-delay: 0.5s; }
+
+/* Smooth Scroll Behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Reduce Motion for Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

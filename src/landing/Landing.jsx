@@ -14,6 +14,35 @@ function Landing() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Scroll-triggered animations
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible')
+          observer.unobserve(entry.target)
+        }
+      })
+    }, observerOptions)
+
+    // Small delay to ensure DOM is ready
+    const timeoutId = setTimeout(() => {
+      const animatedElements = document.querySelectorAll('.animate-on-scroll')
+      animatedElements.forEach((el) => observer.observe(el))
+    }, 100)
+
+    return () => {
+      clearTimeout(timeoutId)
+      const animatedElements = document.querySelectorAll('.animate-on-scroll')
+      animatedElements.forEach((el) => observer.unobserve(el))
+    }
+  }, [selectedDirector]) // Re-run when modal opens/closes
+
   const directors = [
     {
       id: 1,
@@ -233,7 +262,7 @@ function Landing() {
       {/* About Section */}
       <section className="landing-section section-about" id="about">
         <div className="section-container">
-          <div className="section-header-center">
+          <div className="section-header-center animate-on-scroll">
             <h2 className="section-title">Who We Are</h2>
             <p className="section-description">
               APIMS INDIA PRIVATE LIMITED is bringing Experience, Expertise and Network to grow and create
@@ -241,7 +270,7 @@ function Landing() {
             </p>
           </div>
           <div className="about-content">
-            <div className="about-card glass-card">
+            <div className="about-card glass-card animate-on-scroll">
               <div className="about-icon">🎯</div>
               <h3>Our Vision</h3>
               <p>
@@ -250,7 +279,7 @@ function Landing() {
                 sustainable state for future generations.
               </p>
             </div>
-            <div className="about-card glass-card">
+            <div className="about-card glass-card animate-on-scroll">
               <div className="about-icon">🚀</div>
               <h3>Our Approach</h3>
               <p>
@@ -267,7 +296,7 @@ function Landing() {
       <section className="landing-section section-mission dark-section">
         <div className="section-container">
           <div className="mission-grid">
-            <div className="mission-content">
+            <div className="mission-content animate-on-scroll">
               <div className="section-eyebrow">Our Mission</div>
               <h2 className="section-title-large">Building India brick by brick</h2>
               <p className="mission-text">
@@ -279,7 +308,7 @@ function Landing() {
               </p>
               <button className="btn-secondary-light">Learn More About Our Mission →</button>
             </div>
-            <div className="mission-visual">
+            <div className="mission-visual animate-on-scroll">
               <div className="mission-image-placeholder">
               </div>
             </div>
@@ -290,7 +319,7 @@ function Landing() {
       {/* What We Do Section */}
       <section className="landing-section section-what-we-do" id="services">
         <div className="section-container">
-          <div className="section-header-center">
+          <div className="section-header-center animate-on-scroll">
             <div className="section-eyebrow">What We Do</div>
             <h2 className="section-title">Comprehensive Business Solutions</h2>
             <p className="section-description">
@@ -300,7 +329,7 @@ function Landing() {
             </p>
           </div>
           <div className="solutions-grid">
-            <div className="solution-card">
+            <div className="solution-card animate-on-scroll">
               <div className="solution-icon">💼</div>
               <h3>Financial Services</h3>
               <p>
@@ -308,7 +337,7 @@ function Landing() {
                 services to business owners to help their finances run smoothly.
               </p>
             </div>
-            <div className="solution-card">
+            <div className="solution-card animate-on-scroll">
               <div className="solution-icon">📊</div>
               <h3>Corporate Services</h3>
               <p>
@@ -316,7 +345,7 @@ function Landing() {
                 realities and capabilities, delivering measurable results.
               </p>
             </div>
-            <div className="solution-card">
+            <div className="solution-card animate-on-scroll">
               <div className="solution-icon">🎓</div>
               <h3>Training Programs</h3>
               <p>
@@ -331,7 +360,7 @@ function Landing() {
       {/* Board of Directors */}
       <section className="landing-section section-directors dark-section" id="directors">
         <div className="section-container">
-          <div className="section-header-center">
+          <div className="section-header-center animate-on-scroll">
             <div className="section-eyebrow">Leadership</div>
             <h2 className="section-title">Board of Directors</h2>
             <p className="section-description">
@@ -342,7 +371,7 @@ function Landing() {
             {directors.map((director) => (
               <div 
                 key={director.id} 
-                className="director-card"
+                className="director-card animate-on-scroll"
                 onClick={() => setSelectedDirector(director)}
               >
                 <div className="director-image">
@@ -502,7 +531,7 @@ function Landing() {
       {/* Business Verticals */}
       <section className="landing-section section-verticals" id="verticals">
         <div className="section-container">
-          <div className="section-header-center">
+          <div className="section-header-center animate-on-scroll">
             <div className="section-eyebrow">Our Portfolio</div>
             <h2 className="section-title">Business Verticals</h2>
             <p className="section-description">
@@ -522,7 +551,7 @@ function Landing() {
               { label: 'Mining', desc: 'Mineral extraction and resource management', img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80' },
               { label: 'Exports & Trading', desc: 'International trade and commerce', img: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80' },
             ].map(v => (
-              <div key={v.label} className="vertical-card">
+              <div key={v.label} className="vertical-card animate-on-scroll">
                 <div className="vertical-media">
                   <img src={v.img} alt={v.label} className="vertical-image" />
                   <div className="vertical-overlay"></div>
