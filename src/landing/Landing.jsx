@@ -176,7 +176,7 @@ function Landing() {
       name: 'Ramadas Yarlagadda',
       role: 'Director',
       initials: 'RY',
-      image: 'https://static.wixstatic.com/media/5c0589_ad0143537d3a49cdb739f22d10a3a1cf~mv2.jpeg',
+      image: 'https://static.wixstatic.com/media/5c0589_316d4cb29fee4ed5b3652468a5cd586b~mv2.jpg',
       bio: `Mr. Y Ram Das is the Director of APIMS India Pvt. Ltd. His expertise is a perfect blend of strong theoretical base and practical exposure.`,
       description: `He brings along with him over three decades of experience as a Professor in Organic Chemistry in JKC College, Guntur and as an advisory member of various prestigious education institutes. He is a Gold Medalist in Msc (Organic Chemistry) from University of Jabalpur.`,
       experience: `As an erudite and most experienced personality, at APIMS he plays a crucial role in critical decision process.`,
