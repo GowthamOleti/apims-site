@@ -3,12 +3,14 @@ import './Loading.css'
 function Loading() {
   return (
     <div className="loading-container">
-      <div className="loading-spinner">
-        <div className="spinner-ring"></div>
-        <div className="spinner-ring"></div>
-        <div className="spinner-ring"></div>
+      <div className="loading-logo-wrapper">
+        <img 
+          src="/apims-logo.png" 
+          alt="APIMS Logo" 
+          className="loading-logo"
+        />
+        <div className="loading-pulse"></div>
       </div>
-      <div className="loading-text">Loading...</div>
     </div>
   )
 }

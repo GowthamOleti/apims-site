@@ -1,10 +1,21 @@
 import { useState, useEffect } from 'react'
 import { Phone, Mail, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react'
+import Loading from '../components/Loading'
 import './landing.css'
 
 function Landing() {
   const [scrolled, setScrolled] = useState(false)
   const [selectedDirector, setSelectedDirector] = useState(null)
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    // Simulate loading time
+    const timer = setTimeout(() => {
+      setIsLoading(false)
+    }, 1500)
+
+    return () => clearTimeout(timer)
+  }, [])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -194,6 +205,10 @@ function Landing() {
       philosophy: `His deep understanding of education and strategic thinking brings valuable perspective to APIMS India's mission of contributing to India's development through informed investment decisions and strategic partnerships.`
     }
   ]
+
+  if (isLoading) {
+    return <Loading />
+  }
 
   return (
     <div className="landing-page">

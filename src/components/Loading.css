@@ -5,62 +5,93 @@
   justify-content: center;
   min-height: 100vh;
   gap: 20px;
-  background-color: var(--bg-primary);
+  background: #ffffff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
 }
 
-.loading-spinner {
+.loading-logo-wrapper {
   position: relative;
-  width: 60px;
-  height: 60px;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.spinner-ring {
+.loading-logo {
+  width: 80px;
+  height: auto;
+  animation: logoFloat 2s ease-in-out infinite;
+  z-index: 2;
+  position: relative;
+}
+
+.loading-pulse {
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(0, 113, 227, 0.1);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.loading-pulse::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
-  border: 3px solid transparent;
-  border-top-color: var(--accent);
   border-radius: 50%;
-  animation: spin 1s linear infinite;
+  background: rgba(0, 113, 227, 0.15);
+  animation: pulse 2s ease-in-out infinite 0.5s;
 }
 
-.spinner-ring:nth-child(1) {
-  animation-delay: 0s;
+.loading-pulse::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(0, 113, 227, 0.2);
+  animation: pulse 2s ease-in-out infinite 1s;
 }
 
-.spinner-ring:nth-child(2) {
-  width: 80%;
-  height: 80%;
-  top: 10%;
-  left: 10%;
-  border-top-color: var(--accent-hover);
-  animation-duration: 1.2s;
-  animation-delay: -0.2s;
+@keyframes logoFloat {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-10px) scale(1.05);
+    opacity: 0.9;
+  }
 }
 
-.spinner-ring:nth-child(3) {
-  width: 60%;
-  height: 60%;
-  top: 20%;
-  left: 20%;
-  border-top-color: var(--text-secondary);
-  animation-duration: 0.8s;
-  animation-delay: -0.4s;
-}
-
-@keyframes spin {
+@keyframes pulse {
   0% {
-    transform: rotate(0deg);
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0.5;
   }
   100% {
-    transform: rotate(360deg);
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
   }
-}
-
-.loading-text {
-  font-size: 16px;
-  color: var(--text-secondary);
-  font-weight: 500;
-  letter-spacing: 0.5px;
 }
 
