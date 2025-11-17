@@ -28,6 +28,12 @@ function Landing() {
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50)
+      
+      // Scroll progress indicator
+      const scrollTop = window.scrollY
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight
+      const scrollPercent = (scrollTop / docHeight) * 100
+      document.body.style.setProperty('--scroll-progress', `${scrollPercent}%`)
     }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
@@ -594,7 +600,7 @@ function Landing() {
 
       {/* CTA Section */}
       <section className="landing-section section-cta">
-        <div className="cta-container">
+        <div className="cta-container animate-on-scroll">
           <h2 className="cta-title">Ready to exceed your expectations?</h2>
           <p className="cta-description">
             Let's discuss how we can help you achieve your investment goals

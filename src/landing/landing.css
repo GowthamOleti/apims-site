@@ -1563,6 +1563,102 @@
   }
 }
 
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rotateIn {
+  from {
+    opacity: 0;
+    transform: rotate(-10deg) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes iconBounce {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  25% {
+    transform: translateY(-5px) scale(1.05);
+  }
+  75% {
+    transform: translateY(2px) scale(0.98);
+  }
+}
+
+@keyframes textReveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+    clip-path: inset(0 0 100% 0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    clip-path: inset(0 0 0% 0);
+  }
+}
+
 /* Animation Classes */
 .animate-on-scroll {
   opacity: 0;
@@ -1644,6 +1740,7 @@
 
 .landing-nav-links a {
   position: relative;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .landing-nav-links a::after {
@@ -1654,11 +1751,60 @@
   width: 0;
   height: 2px;
   background: var(--color-accent);
-  transition: width 0.3s ease;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.landing-nav-links a:hover {
+  transform: translateY(-2px);
+  color: var(--color-accent);
 }
 
 .landing-nav-links a:hover::after {
   width: 100%;
+}
+
+/* Contact Link Animations */
+.contact-link {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-link:hover {
+  transform: translateX(4px);
+  opacity: 0.9;
+}
+
+.contact-link svg {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-link:hover svg {
+  transform: scale(1.1);
+}
+
+/* Footer Link Animations */
+.footer-col a {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-block;
+}
+
+.footer-col a:hover {
+  transform: translateX(4px);
+  color: var(--color-accent);
+}
+
+.footer-social a {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-social a:hover {
+  transform: translateY(-3px) scale(1.1);
+  background: rgba(255, 255, 255, 0.2);
 }
 
 /* Card Hover Animations */
@@ -1681,7 +1827,7 @@
 
 /* Image Animations */
 .vertical-image {
-  transition: transform 0.5s ease;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .vertical-card:hover .vertical-image {
@@ -1689,11 +1835,48 @@
 }
 
 .director-image img {
-  transition: transform 0.4s ease;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .director-card:hover .director-image img {
   transform: scale(1.15);
+}
+
+/* Icon Animations */
+.solution-icon,
+.about-icon {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.solution-card:hover .solution-icon {
+  animation: iconBounce 0.6s ease;
+  transform: scale(1.1);
+}
+
+.about-card:hover .about-icon {
+  animation: iconBounce 0.6s ease;
+}
+
+/* Gradient Text Animation */
+.gradient-text,
+.gradient-title {
+  background-size: 200% auto;
+  animation: gradientShift 3s ease infinite;
+}
+
+/* Text Reveal Animation */
+.section-header-center .section-title,
+.section-title-large {
+  animation: textReveal 1s ease-out forwards;
+}
+
+.section-header-center .section-description {
+  animation: textReveal 1s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.section-header-center.visible .section-description {
+  opacity: 1;
 }
 
 /* Button Animations */
@@ -1705,7 +1888,8 @@
 .landing-nav-cta {
   position: relative;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(0);
 }
 
 .btn-primary::before,
@@ -1734,6 +1918,37 @@
 .landing-nav-cta:hover::before {
   width: 300px;
   height: 300px;
+}
+
+.btn-primary:hover,
+.btn-glass:hover,
+.btn-secondary:hover,
+.btn-secondary-light:hover,
+.btn-primary-large:hover,
+.landing-nav-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary:active,
+.btn-glass:active,
+.btn-secondary:active,
+.btn-secondary-light:active,
+.btn-primary-large:active,
+.landing-nav-cta:active {
+  transform: translateY(0);
+  transition: transform 0.1s ease;
+}
+
+/* Button Icon Animations */
+.btn-glass svg,
+.btn-primary-large svg {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-glass:hover svg,
+.btn-primary-large:hover svg {
+  transform: translateX(4px);
 }
 
 /* Modal Animations */
@@ -1786,6 +2001,83 @@
 /* Smooth Scroll Behavior */
 html {
   scroll-behavior: smooth;
+}
+
+/* Scroll Progress Indicator */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--scroll-progress, 0%);
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-accent), #0071e3);
+  z-index: 9999;
+  transition: width 0.1s ease-out;
+  box-shadow: 0 0 10px rgba(0, 113, 227, 0.5);
+}
+
+/* Parallax Effects */
+.hero-gradient,
+.hero-blur {
+  transition: transform 0.1s ease-out;
+}
+
+/* Mission Image Parallax */
+.mission-image-placeholder {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mission-visual:hover .mission-image-placeholder {
+  transform: scale(1.02);
+}
+
+/* Director Card Button Animation */
+.director-view-profile {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.director-view-profile::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease, height 0.4s ease;
+}
+
+.director-view-profile:hover::before {
+  width: 200px;
+  height: 200px;
+}
+
+.director-view-profile:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Solution Card Enhancements */
+.solution-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.solution-card:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+/* CTA Section Animations */
+.cta-title {
+  transition: transform 0.3s ease;
+}
+
+.cta-container:hover .cta-title {
+  transform: scale(1.02);
 }
 
 /* Reduce Motion for Accessibility */
