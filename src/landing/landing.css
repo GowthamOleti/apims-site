@@ -174,7 +174,7 @@
   font-size:14px;
   letter-spacing:.12em;
   text-transform:uppercase;
-  color: white;
+  color: white !important;
   opacity:.85;
   margin-bottom:16px;
 }
@@ -197,18 +197,18 @@
   line-height: 1.1;
   margin-bottom: 32px;
   letter-spacing: -0.03em;
-  color: white;
+  color: white !important;
 }
 
 .gradient-text {
-  color: white;
+  color: white !important;
 }
 
 .hero-subtitle {
   font-size: clamp(18px, 2vw, 24px);
   line-height: 1.6;
   margin-bottom: 48px;
-  color: white;
+  color: white !important;
   opacity: 0.95;
   font-weight: 400;
   max-width: 800px;
