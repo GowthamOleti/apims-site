@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Phone, Mail, ArrowRight } from 'lucide-react'
 import Loading from '../components/Loading'
 import './landing.css'
@@ -8,6 +8,8 @@ function Landing() {
   const [selectedDirector, setSelectedDirector] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
   const [showLoader, setShowLoader] = useState(true)
+  const [tickerIndex, setTickerIndex] = useState(0)
+  const tickerDirectionRef = useRef(1)
 
   const heroProjects = [
     'Power & Energy',
@@ -33,6 +35,25 @@ function Landing() {
       return () => clearTimeout(fadeTimer)
     }
   }, [isLoading])
+
+  useEffect(() => {
+    if (heroProjects.length <= 1) return undefined
+    const interval = setInterval(() => {
+      setTickerIndex((prev) => {
+        let next = prev + tickerDirectionRef.current
+        const lastIndex = heroProjects.length - 1
+        if (next >= lastIndex) {
+          next = lastIndex
+          tickerDirectionRef.current = -1
+        } else if (next <= 0) {
+          next = 0
+          tickerDirectionRef.current = 1
+        }
+        return next
+      })
+    }, 2200)
+    return () => clearInterval(interval)
+  }, [heroProjects.length])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -272,9 +293,12 @@ function Landing() {
           <div className="hero-ticker">
             <span className="ticker-label">We handle</span>
             <div className="ticker-window" aria-hidden="true">
-              <div className="ticker-track">
-                {[...heroProjects, ...heroProjects].map((item, index) => (
-                  <span className="ticker-item" key={`${item}-${index}`}>
+              <div
+                className="ticker-column"
+                style={{ transform: `translateY(-${tickerIndex * 100}%)` }}
+              >
+                {heroProjects.map((item) => (
+                  <span className="ticker-item" key={item}>
                     {item}
                   </span>
                 ))}
