@@ -9,6 +9,15 @@ function Landing() {
   const [isLoading, setIsLoading] = useState(true)
   const [showLoader, setShowLoader] = useState(true)
 
+  const heroProjects = [
+    'Power & Energy',
+    'Food Processing',
+    'Media & Entertainment',
+    'Logistics',
+    'Infrastructure',
+    'Educational'
+  ]
+
   useEffect(() => {
     // Simulate loading time
     const timer = setTimeout(() => {
@@ -260,6 +269,19 @@ function Landing() {
             We identify lucrative investment opportunities across businesses, providing investors with sector,
             market, and geographic investment advice and strategies.
           </p>
+          <div className="hero-ticker">
+            <span className="ticker-label">We handle</span>
+            <div className="ticker-window" aria-hidden="true">
+              <div className="ticker-track">
+                {[...heroProjects, ...heroProjects].map((item, index) => (
+                  <span className="ticker-item" key={`${item}-${index}`}>
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <span className="ticker-suffix">projects.</span>
+          </div>
           <div className="hero-ctas">
             <a href="#about" className="btn-glass">
               Learn More <ArrowRight size={18} />

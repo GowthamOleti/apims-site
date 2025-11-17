@@ -213,6 +213,57 @@
   margin-right: auto;
 }
 
+.hero-ticker {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 40px;
+  padding: 14px 22px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.ticker-label,
+.ticker-suffix {
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.9;
+}
+
+.ticker-window {
+  width: 220px;
+  overflow: hidden;
+  height: 22px;
+}
+
+.ticker-track {
+  display: flex;
+  column-gap: 28px;
+  animation: tickerMove 14s linear infinite;
+  white-space: nowrap;
+}
+
+.ticker-item {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+}
+
+@keyframes tickerMove {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 .hero-ctas {
   display: flex;
   gap: 16px;
