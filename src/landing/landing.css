@@ -458,6 +458,71 @@
   transition: transform 0.1s ease;
 }
 
+/* Wayside Amenities Section */
+.section-wayside {
+  background: #ffffff;
+  padding: 100px 24px;
+}
+
+.wayside-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.wayside-title {
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 16px 0 24px;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.wayside-description {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  margin: 0 0 32px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-wayside {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: var(--color-accent);
+  color: white;
+  border-radius: 24px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 16px rgba(0, 113, 227, 0.2);
+}
+
+.btn-wayside:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 113, 227, 0.3);
+  background: #0066cc;
+}
+
+.btn-wayside:active {
+  transform: translateY(0);
+  transition: transform 0.1s ease;
+}
+
+.btn-wayside svg {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-wayside:hover svg {
+  transform: translateX(4px);
+}
+
 /* Section Base */
 .landing-section {
   padding: 120px 24px;
@@ -1572,6 +1637,18 @@
   
   .mou-image {
     border-width: 5px;
+  }
+  
+  .section-wayside {
+    padding: 80px 16px;
+  }
+  
+  .wayside-title {
+    font-size: 32px;
+  }
+  
+  .wayside-description {
+    font-size: 17px;
   }
   
   .footer-grid {
