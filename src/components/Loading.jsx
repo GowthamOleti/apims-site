@@ -1,12 +1,12 @@
 import './Loading.css'
 
-function Loading() {
+function Loading({ isFadingOut = false }) {
   return (
-    <div className="loading-container">
+    <div className={`loading-container ${isFadingOut ? 'fade-out' : ''}`}>
       <div className="loading-logo-wrapper">
-        <img 
-          src="/apims-logo.png" 
-          alt="APIMS Logo" 
+        <img
+          src="/apims-logo.png"
+          alt="APIMS Logo"
           className="loading-logo"
         />
         <div className="loading-pulse"></div>
