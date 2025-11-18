@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Phone, Mail, ArrowRight } from 'lucide-react'
+import { Phone, Mail, ArrowRight, Menu, X } from 'lucide-react'
 import Loading from '../components/Loading'
 import './landing.css'
 
@@ -8,6 +8,7 @@ function Landing() {
   const [selectedDirector, setSelectedDirector] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
   const [showLoader, setShowLoader] = useState(true)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   useEffect(() => {
     // Simulate loading time
@@ -235,21 +236,68 @@ function Landing() {
             <span className="logo-text">APIMS</span>
           </div>
           <div className="landing-nav-links">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#directors">Leadership</a>
-            <a href="#verticals">Verticals</a>
-            <a href="#contact">Contact</a>
+            <a href="#home" onClick={() => setIsMenuOpen(false)}>Home</a>
+            <a href="#about" onClick={() => setIsMenuOpen(false)}>About</a>
+            <a href="#services" onClick={() => setIsMenuOpen(false)}>Services</a>
+            <a href="#directors" onClick={() => setIsMenuOpen(false)}>Leadership</a>
+            <a href="#verticals" onClick={() => setIsMenuOpen(false)}>Verticals</a>
+            <a href="#contact" onClick={() => setIsMenuOpen(false)}>Contact</a>
           </div>
-          <a
-            className="landing-nav-cta"
-            href="mailto:apimsindia@gmail.com?subject=Hey%20APIMS%2C%20I%20have%20an%20idea.."
-          >
-            Get a Quote
-          </a>
+          <div className="landing-nav-right">
+            <a
+              className="landing-nav-cta"
+              href="mailto:apimsindia@gmail.com?subject=Hey%20APIMS%2C%20I%20have%20an%20idea.."
+            >
+              Get a Quote
+            </a>
+            <button
+              className="hamburger-menu"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </nav>
+
+      {/* Mobile Menu Overlay */}
+      <div className={`mobile-menu-overlay ${isMenuOpen ? 'open' : ''}`} onClick={() => setIsMenuOpen(false)}>
+        <div className="mobile-menu" onClick={(e) => e.stopPropagation()}>
+          <div className="mobile-menu-header">
+            <div className="mobile-menu-logo">
+              <img
+                src="/apims-logo.png"
+                alt="APIMS logo"
+                className="landing-logo-img"
+              />
+              <span className="logo-text">APIMS</span>
+            </div>
+            <button
+              className="mobile-menu-close"
+              onClick={() => setIsMenuOpen(false)}
+              aria-label="Close menu"
+            >
+              <X size={24} />
+            </button>
+          </div>
+          <nav className="mobile-menu-nav">
+            <a href="#home" onClick={() => setIsMenuOpen(false)}>Home</a>
+            <a href="#about" onClick={() => setIsMenuOpen(false)}>About</a>
+            <a href="#services" onClick={() => setIsMenuOpen(false)}>Services</a>
+            <a href="#directors" onClick={() => setIsMenuOpen(false)}>Leadership</a>
+            <a href="#verticals" onClick={() => setIsMenuOpen(false)}>Verticals</a>
+            <a href="#contact" onClick={() => setIsMenuOpen(false)}>Contact</a>
+            <a
+              className="mobile-menu-cta"
+              href="mailto:apimsindia@gmail.com?subject=Hey%20APIMS%2C%20I%20have%20an%20idea.."
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Get a Quote
+            </a>
+          </nav>
+        </div>
+      </div>
 
       {/* Hero Section */}
       <section className="landing-hero" id="home">
