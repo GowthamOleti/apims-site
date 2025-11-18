@@ -181,6 +181,69 @@ function WaysideAmenities() {
           </div>
         </div>
       </article>
+
+      {/* Footer */}
+      <footer className="landing-footer" id="contact">
+        <div className="footer-container">
+          <div className="footer-grid">
+            <div className="footer-col">
+              <h4>APIMS INDIA</h4>
+              <p>Private Limited</p>
+              <p className="footer-tagline">
+                Building prosperous, sustainable futures through strategic investments and partnerships.
+              </p>
+            </div>
+            <div className="footer-col">
+              <h5>Company</h5>
+              <a href="/#about">About Us</a>
+              <a href="/#services">Our Services</a>
+              <a href="/#directors">Leadership</a>
+              <a href="/#verticals">Verticals</a>
+            </div>
+            <div className="footer-col">
+              <h5>Services</h5>
+              <a href="/#services">Financial Services</a>
+              <a href="/#services">Corporate Services</a>
+              <a href="/#services">Training Programs</a>
+              <a href="/#services">Consulting</a>
+            </div>
+            <div className="footer-col">
+              <h5>Contact</h5>
+              <a href="mailto:contact@apimsindia.com">+91 99499 45699</a>
+              <a href="mailto:contact@apimsindia.com">contact@apimsindia.com</a>
+              <div className="footer-social">
+                <a
+                  href="https://www.facebook.com/apimsindia"
+                  aria-label="Facebook"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  f
+                </a>
+                <a
+                  href="https://x.com/apimsindia"
+                  aria-label="Twitter"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  𝕏
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/apims-india/"
+                  aria-label="LinkedIn"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  in
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="footer-bottom">
+            <p>&copy; 2025 APIMS INDIA Private Limited. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }
