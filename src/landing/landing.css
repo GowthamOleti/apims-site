@@ -1784,7 +1784,7 @@
 }
 
 /* Responsive */
-@media (max-width: 968px) {
+@media (max-width: 1024px) {
   .landing-nav-links {
     display: none;
   }
