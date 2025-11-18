@@ -1,18 +1,55 @@
-import { ArrowLeft } from 'lucide-react'
+import { useState, useEffect } from 'react'
 import './WaysideAmenities.css'
 
 function WaysideAmenities() {
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
     <div className="wayside-page">
-      {/* Header */}
-      <header className="wayside-header">
-        <div className="header-container">
-          <a href="/" className="back-link">
-            <ArrowLeft size={20} />
-            <span>Back to Home</span>
+      {/* Navigation */}
+      <nav className={`landing-nav ${scrolled ? 'scrolled' : ''}`}>
+        <div className="landing-nav-container">
+          <div className="landing-nav-logo">
+            <img
+              src="/apims-logo.png"
+              alt="APIMS logo"
+              className="landing-logo-img"
+            />
+            <span className="logo-text">APIMS</span>
+          </div>
+          <div className="landing-nav-links">
+            <a href="/">Home</a>
+            <a href="/#about">About</a>
+            <a href="/#services">Services</a>
+            <a href="/#directors">Leadership</a>
+            <a href="/#verticals">Verticals</a>
+            <a href="/#contact">Contact</a>
+          </div>
+          <a
+            className="landing-nav-cta"
+            href="mailto:apimsindia@gmail.com?subject=Hey%20APIMS%2C%20I%20have%20an%20idea.."
+          >
+            Get a Quote
           </a>
         </div>
-      </header>
+      </nav>
+
+      {/* Hero with Image */}
+      <section className="wayside-hero-image">
+        <img 
+          src="https://static.wixstatic.com/media/5c0589_84f5636d3922464bba52db56be305592~mv2.png" 
+          alt="Bengaluru-Chennai Expressway Map"
+          className="wayside-hero-img"
+        />
+      </section>
 
       {/* Hero */}
       <section className="wayside-hero">
@@ -20,7 +57,9 @@ function WaysideAmenities() {
           <span className="hero-tag">Infrastructure · Expressway</span>
           <h1 className="hero-title">Wayside Amenities Project</h1>
           <p className="hero-subtitle">
-            Transforming India's highway experience with world-class amenities on the Bengaluru-Chennai Expressway
+            <strong>YSEIL</strong> is transforming India's highway experience with world-class amenities on the 
+            <strong> Bengaluru-Chennai Expressway</strong>, connecting South India's major growth engines: 
+            <strong> Bengaluru</strong>, <strong>Kolar</strong>, <strong>Chittor</strong>, <strong>Kanchipuram</strong>, and <strong>Chennai</strong>.
           </p>
         </div>
       </section>
@@ -30,11 +69,13 @@ function WaysideAmenities() {
         <div className="article-container">
           {/* Introduction */}
           <div className="article-section">
-            <h2>India's First Premium Expressway Amenities</h2>
+            <h2>YSEIL's Landmark Infrastructure Project</h2>
             <p>
-              APIMS is proud to be part of a groundbreaking infrastructure initiative that's setting new 
-              standards for highway travel in India. Our wayside amenities project on the Bengaluru-Chennai 
-              Expressway represents a significant leap forward in providing world-class facilities for travelers.
+              <strong>YSEIL</strong> is proud to be leading a groundbreaking infrastructure initiative that's setting new 
+              standards for highway travel in India. Our wayside amenities project on the <strong>Bengaluru-Chennai Expressway</strong> 
+              represents a significant leap forward in providing world-class facilities for travelers across South India's 
+              major corridors, connecting the vibrant cities of <strong>Bengaluru</strong>, <strong>Kolar</strong>, <strong>Chittor</strong>, 
+              <strong> Kanchipuram</strong>, and <strong>Chennai</strong>.
             </p>
           </div>
 
@@ -49,12 +90,28 @@ function WaysideAmenities() {
 
           {/* Section 1 */}
           <div className="article-section">
-            <h2>Strategic Locations</h2>
+            <h2>Strategic Locations Across South India</h2>
             <p>
-              The project encompasses three strategic locations along the 262 km expressway corridor, 
-              connecting South India's major growth engines. Each site is strategically positioned to 
-              provide convenient access and premium services to travelers.
+              <strong>YSEIL's</strong> project encompasses three strategic locations along the 262 km 
+              <strong> Bengaluru-Chennai Expressway</strong>, connecting South India's major growth engines: 
+              <strong> Bengaluru</strong>, <strong>Kolar</strong>, <strong>Chittor</strong>, <strong>Kanchipuram</strong>, and <strong>Chennai</strong>. 
+              Each site is strategically positioned to provide convenient access and premium services to travelers 
+              along this critical transportation corridor.
             </p>
+            <div className="cities-highlight">
+              <div className="city-card">
+                <h3>Kolar, Bangalore</h3>
+                <p>27.7 Acres • Gateway Site • 16,889 vehicles/day</p>
+              </div>
+              <div className="city-card">
+                <h3>Chittor</h3>
+                <p>33.5 Acres • Pilgrim's Haven • 14,610 vehicles/day</p>
+              </div>
+              <div className="city-card">
+                <h3>Kanchipuram, Chennai</h3>
+                <p>30.8 Acres • Logistics Hub • 18,362 vehicles/day</p>
+              </div>
+            </div>
           </div>
 
           {/* Image 2 */}
@@ -93,13 +150,16 @@ function WaysideAmenities() {
           <div className="article-section">
             <h2>Impact & Scale</h2>
             <p>
-              This landmark project positions APIMS as a pioneer in India's infrastructure transformation. 
-              With 94 acres of total land, 30-year lease periods, and serving over 50,000 daily travelers, 
-              we're creating destinations that redefine highway travel for millions.
+              This landmark <strong>YSEIL</strong> project positions us as a pioneer in India's infrastructure transformation. 
+              With 94 acres of total land spanning across <strong>Kolar</strong>, <strong>Chittor</strong>, and 
+              <strong> Kanchipuram</strong>, connecting the major cities of <strong>Bengaluru</strong> and <strong>Chennai</strong>, 
+              30-year lease periods, and serving over 50,000 daily travelers, we're creating destinations that redefine 
+              highway travel for millions across South India.
             </p>
             <p>
-              The project represents our commitment to excellence in infrastructure development and our vision 
-              of building India's future through strategic investments in essential facilities.
+              The project represents <strong>YSEIL's</strong> commitment to excellence in infrastructure development and our vision 
+              of building India's future through strategic investments in essential facilities that connect 
+              <strong> Bengaluru</strong>, <strong>Kolar</strong>, <strong>Chittor</strong>, <strong>Kanchipuram</strong>, and <strong>Chennai</strong>.
             </p>
           </div>
 
@@ -116,10 +176,12 @@ function WaysideAmenities() {
           <div className="article-section">
             <h2>Building the Future</h2>
             <p>
-              As we continue to develop these world-class facilities, APIMS remains committed to delivering 
+              As <strong>YSEIL</strong> continues to develop these world-class facilities along the 
+              <strong> Bengaluru-Chennai Expressway</strong>, we remain committed to delivering 
               infrastructure that not only meets international standards but also contributes to India's 
-              economic growth and development. This project is just one example of how we're building India 
-              brick by brick.
+              economic growth and development. This project connecting <strong>Bengaluru</strong>, 
+              <strong> Kolar</strong>, <strong>Chittor</strong>, <strong>Kanchipuram</strong>, and 
+              <strong> Chennai</strong> is just one example of how we're building India brick by brick.
             </p>
           </div>
 
