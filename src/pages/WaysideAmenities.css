@@ -106,7 +106,7 @@
 /* Hero Image Section */
 .wayside-hero-image {
   margin-top: 64px;
-  padding: 16px 24px 0;
+  padding: 16px 24px 32px;
   background: #ffffff;
   display: flex;
   justify-content: center;
@@ -362,7 +362,7 @@
 
   .wayside-hero-image {
     margin-top: 56px;
-    padding: 12px 16px 0;
+    padding: 12px 16px 24px;
   }
 
   .wayside-hero-img {

@@ -51,19 +51,6 @@ function WaysideAmenities() {
         />
       </section>
 
-      {/* Hero */}
-      <section className="wayside-hero">
-        <div className="hero-container">
-          <span className="hero-tag">Infrastructure · Expressway</span>
-          <h1 className="hero-title">Wayside Amenities Project</h1>
-          <p className="hero-subtitle">
-            <strong>YSEIL</strong> is transforming India's highway experience with world-class amenities on the 
-            <strong> Bengaluru-Chennai Expressway</strong>, connecting South India's major growth engines: 
-            <strong> Bengaluru</strong>, <strong>Kolar</strong>, <strong>Chittor</strong>, <strong>Kanchipuram</strong>, and <strong>Chennai</strong>.
-          </p>
-        </div>
-      </section>
-
       {/* Content */}
       <article className="wayside-article">
         <div className="article-container">
