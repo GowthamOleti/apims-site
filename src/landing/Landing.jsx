@@ -383,7 +383,7 @@ function Landing() {
                 This milestone represents our commitment to strategic partnerships and collaborative growth.
               </p>
               <a 
-                href="https://5c05895c-11c8-4e3f-b5ad-6185fd717766.usrfiles.com/ugd/5c0589_7a11e3912bde4bf393a106576420e5ba.pdf" 
+                href="https://5c05895c-11c8-4e3f-b5ad-6185fd717766.usrfiles.com/ugd/5c0589_d19a0a68fbd346a4a597f4c4f13a762a.pdf" 
                 target="_blank" 
                 rel="noreferrer"
                 className="btn-mou"
@@ -393,7 +393,7 @@ function Landing() {
             </div>
             <div className="mou-image-wrapper animate-on-scroll">
               <a 
-                href="https://5c05895c-11c8-4e3f-b5ad-6185fd717766.usrfiles.com/ugd/5c0589_7a11e3912bde4bf393a106576420e5ba.pdf" 
+                href="https://5c05895c-11c8-4e3f-b5ad-6185fd717766.usrfiles.com/ugd/5c0589_d19a0a68fbd346a4a597f4c4f13a762a.pdf" 
                 target="_blank" 
                 rel="noreferrer"
                 className="mou-link"
